@@ -1,4 +1,4 @@
-/*===== GOOGLE FONTS =====*/
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 /*===== VARIABLES CSS =====*/
 :root {
@@ -286,7 +286,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch; /* S'assurer que toutes les cartes ont la même hauteur */
+  align-items: stretch; 
   gap: 2rem;
   padding: 2rem 1rem;
   
@@ -316,7 +316,7 @@ img {
 }
 
 .work__content {
-  flex: 1; /* Fait en sorte que le contenu prenne tout l'espace restant */
+  flex: 1; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
