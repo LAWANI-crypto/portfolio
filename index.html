@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Mon Portfolio website </title>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+              publicKey: "IAIyL_-TLblK7IGgO",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            emailjs.init({
+              publicKey: "IAIyL_-TLblK7IGgO",
+            });
+            console.log("hjk")
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                emailjs.init({
+                    publicKey: "IAIyL_-TLblK7IGgO",
+                });
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+     
+                if (!name || !email || !message) {
+                    alert("Tous les champs sont requis !");
+                    return;
+                }
+
+    
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    alert("Veuillez entrer une adresse email valide.");
+                    return;
+                }
+
+               
+                emailjs.sendForm('service_n88shpb', 'template_ag928eq', this)
+                    .then(() => {
+                        alert('Message envoyé avec succès !');
+                        console.log('SUCCESS!');
+                        setTimeout(() => {
+                        window.location.reload();
+                    }, 1000);
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">LAWANI</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link ">Acceuil</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Compétences</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Projets</a></li>
+                        <li class="nav__item"><a href="#learn" class="nav__link">Formations et Expériences</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home bd-grid section" id="home">
+               <img class="image" src="assets/img/Rev.png" alt="">
+            </section>  
+
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">Compétences</h2>
+            
+                <div class="skills__container bd-grid">          
+                    <div>
+                        <p class="skills__text">Développeur passionné, je maîtrise les technologies modernes pour concevoir des applications performantes et intuitives. Doté de solides compétences en JavaScript/TypeScript, je développe des interfaces dynamiques, tout en bâtissant des APIs robustes avec Node.js et NestJS. J'interagis avec la base de données PostgreSQL via Prisma.</p>
+                        
+                        <div class="skills__grid">
+                            <!-- HTML5 -->
+                            <div class="skills__item">
+                                <i class='bx bxl-html5 skills__icon'></i>
+                                <span class="skills__name">HTML5</span>
+                            </div>
+                            
+                            <!-- CSS3 -->
+                            <div class="skills__item">
+                                <i class='bx bxl-css3 skills__icon'></i>
+                                <span class="skills__name">CSS3</span>
+                            </div>
+                            
+                            <!-- JavaScript -->
+                            <div class="skills__item">
+                                <i class='bx bxl-javascript skills__icon'></i>
+                                <span class="skills__name">JavaScript</span>
+                            </div>
+                            
+                            <!-- NestJS -->
+                            <div class="skills__item">
+                                <i class='bx bxl-nodejs skills__icon' style="color: #e0234e;"></i>
+                                <span class="skills__name">NestJS</span>
+                            </div>
+                            
+                            <!-- Node.js -->
+                            <div class="skills__item">
+                                <i class='bx bxl-nodejs skills__icon'></i>
+                                <span class="skills__name">Node.js</span>
+                            </div>
+                            
+                            <!-- PostgreSQL -->
+                            <div class="skills__item">
+                                <img class="imgsvg" src="./assets/img/postgresql.svg" alt="" srcset="">
+                                <span class="skills__name">PostgreSQL</span>
+                            </div>
+                             <!-- github-->
+                             <div class="skills__item">
+                                <i class='bx bxl-github skills__icon'></i>
+                                <span class="skills__name">Github</span>
+                            </div>
+                             <!-- Gitlab-->
+                             <div class="skills__item">
+                                <img class="imgsvg" src="./assets/img/gitlab-svgrepo-com.svg" alt="" srcset="">
+                                <span class="skills__name">Gitlab </span>
+                            </div>
+                             <!--Word -->
+                             <div class="skills__item">
+                                <img class="imgsvg" src="./assets/img/word_888883.png" alt="" srcset="">
+                                <span class="skills__name">Word</span>
+                            </div>
+                             <!-- Excel-->
+                             <div class="skills__item">
+                                <img class="imgsvg" src="./assets/img/microsoft-excel-svgrepo-com.svg" alt="" srcset="">
+                                <span class="skills__name">Excel</span>
+                            </div>
+                             <!-- Figma-->
+                             <div class="skills__item">
+                                <img class="imgsvg" src="./assets/img/figma-icon.svg" alt="" srcset="">
+                                <span class="skills__name">Figma</span>
+                            </div>
+                             <!-- Prisma-->
+                             <div class="skills__item">
+                                <img class="imgsvg" src="./assets/img/prisma-svgrepo-com.svg" alt="" srcset="">
+                                <span class="skills__name">Prisma </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--===== WORK =====-->
+            <section class="work section" id="work">
+                <h2 class="section-title">Projets</h2>
+                <div class="work__container container grid">
+                    <!-- Projet 1 -->
+                    <div class="work__card">
+                      <div class="work__content">
+                        <h3 class="work__title">Formulaire et retour d'information dans le mail</h3>
+                        <p class="work__description">
+                        Des formulaires qui permettent á un utilisateur de s'inscrire et de recevoir dans son mail la notifiaction de son inscription réussie ou encore des formulaires qui me permettent d'accéder á tous les champs remplies par l'utilsateur lors du remplissage du formulaire. Des challenges frontend montor pour pouvoir perfectionner mes compétences en html, css et javascript.
+                        </p>
+                        <div class="work__tech">
+                          <span class="work__tech-item">html</span>
+                          <span class="work__tech-item">css</span>
+                          <span class="work__tech-item">Javascript</span>
+                        </div>
+                      </div>
+                    </div>
+                
+                    <!-- Projet 2 -->
+                    <div class="work__card">
+                      <img src="assets/img/projet.ekpokoue Small.png" alt="API REST" class="work__img">
+                      <div class="work__content">
+                        <h3 class="work__title">Ekpokoue.online</h3>
+                        <p class="work__description">
+                           Ekpokoue est une plateforme de rechargement d'unité moins cher sur toute l'étendue du territoire béninois. cett plateforme permet aux utilisateurs de pouvoir s'acheter des unités internet sans pour autant se rendre dans une agence de rechargement et pas dessus tout á moindre coût.
+                        </p>
+                        consulter le lien <a href="">Ekpokoue.online</a> pour beneficier de nos services
+                        <div class="work__tech">
+                          <span class="work__tech-item">php</span>
+                          <span class="work__tech-item">Mysql</span>
+                          <span class="work__tech-item">tailwind</span>
+                        </div>
+                       
+                      </div>
+                    </div>
+                
+                    <!-- Projet 3 -->
+                    <div class="work__card">
+                        <img src="assets/img/portfolio.png" alt="API REST" class="work__img">
+                      <div class="work__content">
+                        <h3 class="work__title">Portfolio</h3>
+                        <p class="work__description">
+                          Mon portfolio personnel développé avec HTML/CSS/JS pur. Design responsive et animations CSS.
+                        </p>
+                        <div class="work__tech">
+                          <span class="work__tech-item">HTML5</span>
+                          <span class="work__tech-item">CSS3</span>
+                        </div>
+                    </div>
+
+              
+            </section>
+             <!--===== Learn =====-->
+             <section class="learn section" id="learn">
+                <h2 class="section-title">Formations et Expériences</h2>
+            
+                <div class="learn__container container grid">
+                    <!-- Formations -->
+                    <div class="learn__content">
+                        <h3 class="learn__title">
+                            <i class="bx bxs-graduation learn__icon"></i>
+                            Formations
+                        </h3>
+            
+                        <div class="learn__item">
+                            <div class="learn__period">2024</div>
+                            <h4 class="learn__degree">Licence en Système Informatique et Logiciel</h4>
+                            <p class="learn__institution">Université Africaine de Technologie et de Management</p>
+                            <span class="learn__location">Cotonou, Bénin</span>
+                        </div>
+            
+                        <div class="learn__item">
+                            <div class="learn__period">2019</div>
+                            <h4 class="learn__degree">Baccalauréat Série C</h4>
+                            <p class="learn__institution">Collège Bon Berger</p>
+                        </div>
+                    </div>
+            
+                    <!-- Expériences -->
+                    <div class="learn__content">
+                        <h3 class="learn__title">
+                            <i class="bx bxs-briefcase-alt learn__icon"></i>
+                            Expériences
+                        </h3>
+            
+                        <div class="learn__item">
+                            <div class="learn__period">2024 - Présent</div>
+                            <h4 class="learn__degree">Stage Professionnel</h4>
+                            <p class="learn__institution">OPEN SI</p>
+                            <ul class="learn__description">
+                                <li>Conception de pages web statiques</li>
+                                <li>Intégration web responsive</li>
+                                <li>Découverte des structures de données</li>
+                                <li>Backend Node.js</li>
+                            </ul>
+                        </div>
+            
+                        <div class="learn__item">
+                            <div class="learn__period">Jan-Avr 2024</div>
+                            <h4 class="learn__degree">Stage Académique</h4>
+                            <p class="learn__institution">INNOV'WEB</p>
+                            <ul class="learn__description">
+                                <li>Conception d'applications pour la protection des données</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact">
+                <h2 class="section-title">Contact</h2>
+
+                <div class="contact__container bd-grid">
+                    <form id="contact-form" class="contact__form">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" placeholder="Name" id="name" name="name" class="contact__input">
+                        <input type="mail" placeholder="Email" id="email"  name="email" class="contact__input">
+                        <textarea  cols="0" rows="10" id="message" name="message" class="contact__input"></textarea>
+                        <input type="submit" value="Envoyer" class="contact__button button">
+                    </form>
+                </div>
+            </section>
+
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">Hadi LAWANI</p>
+            <div class="footer__social">
+                <a href="#" class="footer__icon"><i class='bx bxl-github'></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+            </div>
+           
+        </footer>
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/main.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+   
+    </body>
+</html>
