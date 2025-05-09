@@ -511,6 +511,7 @@ img {
 
   .imgmob {
     display: none;
+    height: 100%;
   }
 }
 @media screen and (max-width: 320px) {
